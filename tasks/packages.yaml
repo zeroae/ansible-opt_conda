@@ -1,6 +1,0 @@
-- name: install base-packages
-  become: yes
-  conda:
-    name:
-      - anaconda-client=1.7.2
-      - conda-forge::conda-build=3.18.11
