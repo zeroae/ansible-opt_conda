@@ -1,7 +1,8 @@
 galaxy_info:
+  role_name: system-conda
   author: Patrick Sodré
   company: Zero A.E., LLC
-  description: Founder
+  description: Installs the conda package manager to /opt/conda
 
   license: BSD-3-Clause
 

@@ -35,4 +35,4 @@ BSD-3-Clause
 Author Information
 ------------------
 
- - [@sodre][https://github.com/sodre]
+ - [@sodre](https://github.com/sodre)
