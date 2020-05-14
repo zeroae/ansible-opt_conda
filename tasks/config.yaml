@@ -1,26 +1,26 @@
 - name: disable auto_update_conda
   become: yes
   command:
-    cmd: "{{ conda }} config --system --set auto_update_conda False"
+    cmd: "{{ opt_conda }} config --system --set auto_update_conda False"
 
 - name: enable non_admin
   become: yes
   command:
-    cmd: "{{ conda }} config --system --set non_admin_enabled True"
+    cmd: "{{ opt_conda }} config --system --set non_admin_enabled True"
 
 - name: disable auto_activate_base
   become: yes
   command:
-    cmd: "{{ conda }} config --system --set auto_activate_base False"
+    cmd: "{{ opt_conda }} config --system --set auto_activate_base False"
 
 - name: enable show_channel_urls
   become: yes
   command:
-    cmd: "{{ conda }} config --system --set show_channel_urls True"
+    cmd: "{{ opt_conda }} config --system --set show_channel_urls True"
 
 - name: enable report_errors
   become: yes
   command:
-    cmd: "{{ conda }} config --system --set report_errors True"
+    cmd: "{{ opt_conda }} config --system --set report_errors True"
 
 
