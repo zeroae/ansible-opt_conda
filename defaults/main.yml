@@ -1,0 +1,3 @@
+---
+system_conda_prefix: /opt/conda
+system_conda: "{{ system_conda_prefix }}/condabin/conda"

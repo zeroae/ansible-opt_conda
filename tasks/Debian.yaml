@@ -1,0 +1,18 @@
+---
+- name: ensure Anaconda's GPG keys are trusted
+  become: yes
+  apt_key:
+    id: 34161F5BF5EB1D4BFBBB8F0A8AEB4F8B29D82806
+    url: https://repo.anaconda.com/pkgs/misc/gpgkeys/anaconda.asc
+    keyring: /usr/share/keyrings/conda-archive-keyring.gpg
+
+- name: ensure Anaconda package repository is configured
+  become: yes
+  apt_repository:
+    repo: deb https://repo.anaconda.com/pkgs/misc/debrepo/conda stable main
+
+- name: ensure miniconda is installed
+  become: yes
+  apt:
+    name: conda=4.8.3-0
+    state: present

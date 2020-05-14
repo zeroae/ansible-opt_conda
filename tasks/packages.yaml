@@ -1,0 +1,11 @@
+- name: install anaconda-client
+  become: yes
+  command:
+    cmd: "{{ conda }} install -n base anaconda-client=1.7.2"
+    creates: "{{ conda_prefix }}/bin/conda-server"
+
+- name: install conda-build
+  become: yes
+  command:
+    cmd: "{{ conda }} install -n base conda-forge::conda-build=3.18.11"
+    creates: "{{ conda_prefix }}/bin/conda-build"

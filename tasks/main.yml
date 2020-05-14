@@ -1,0 +1,10 @@
+---
+
+- name: install the conda package manager
+  include_tasks: "{{ ansible_facts['os_family'] }}.yaml"
+
+- name: configure conda
+  include_tasks: config.yaml
+
+- name: add base packages
+  include_tasks: packages.yaml

@@ -1,0 +1,15 @@
+---
+- name: download miniconda
+  become: yes
+  get_url:
+    # https://docs.conda.io/en/latest/miniconda_hashes.html
+    url: https://repo.anaconda.com/miniconda/Miniconda3-py38_4.8.2-MacOSX-x86_64.sh
+    checksum: "sha256:443f6b9b5ff34b9b841203dd1168c6f9ffe507577d113f123ef9c36fca469228"
+    dest: /usr/local/var/cache/miniconda3.sh
+    mode: 0755
+
+- name: ensure miniconda is installed
+  become: yes
+  command:
+    cmd: /usr/local/var/cache/miniconda3.sh -bfup /opt/conda
+    creates: /opt/conda
