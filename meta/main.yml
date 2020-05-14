@@ -1,8 +1,9 @@
 galaxy_info:
-  role_name: system-conda
+  role_name: opt_conda
   author: Patrick Sodré
   company: Zero A.E., LLC
-  description: Installs the conda package manager to /opt/conda
+  description: |
+    Installs the conda package manager to /opt/conda.
 
   license: BSD-3-Clause
 
@@ -14,8 +15,6 @@ galaxy_info:
         - all
     - name: Debian
       versions:
-        - all
-    - name: Ubuntu
         - all
 
   galaxy_tags:
