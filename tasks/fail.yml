@@ -1,0 +1,3 @@
+---
+- fail:
+    msg: Sorry, {{ ansible_facts['os_family'] }} is not supported.

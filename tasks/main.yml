@@ -1,5 +1,4 @@
 ---
-
 - name: ensure defaults were not modified
   assert:
     that:
@@ -7,7 +6,10 @@
       - "opt_conda == opt_conda_prefix + '/condabin/conda'"
 
 - name: install the conda package manager
-  include_tasks: "{{ ansible_facts['os_family'] }}.yaml"
+  include_tasks: "{{ item }}"
+  with_first_found:
+    - "{{ ansible_facts['os_family'] }}.yaml"
+    - fail.yml
 
 - name: configure conda
   include_tasks: config.yaml

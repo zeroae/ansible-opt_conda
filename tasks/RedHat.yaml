@@ -1,0 +1,21 @@
+---
+- name: ensure Anaconda's GPG keys are trusted
+  become: yes
+  rpm_key:
+    fingerprint: 34161F5BF5EB1D4BFBBB8F0A8AEB4F8B29D82806
+    key: https://repo.anaconda.com/pkgs/misc/gpgkeys/anaconda.asc
+
+- name: ensure Anaconda package repository is configured
+  become: yes
+  yum_repository:
+    name: Conda
+    description: The Conda Package Manager
+    baseurl: https://repo.anaconda.com/pkgs/misc/rpmrepo/conda
+    gpgcheck: yes
+    gpgkey: https://repo.anaconda.com/pkgs/misc/gpgkeys/anaconda.asc
+
+- name: ensure miniconda is installed
+  become: yes
+  yum:
+    name: conda-4.8.3-0
+    state: present

@@ -1,0 +1,7 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: "Include ansible-opt_conda"
+      include_role:
+        name: "ansible-opt_conda"
