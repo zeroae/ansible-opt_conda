@@ -8,8 +8,8 @@
 - name: ensure Anaconda package repository is configured
   become: yes
   yum_repository:
-    name: Conda
-    description: The Conda Package Manager
+    name: conda
+    description: Conda
     baseurl: https://repo.anaconda.com/pkgs/misc/rpmrepo/conda
     gpgcheck: yes
     gpgkey: https://repo.anaconda.com/pkgs/misc/gpgkeys/anaconda.asc

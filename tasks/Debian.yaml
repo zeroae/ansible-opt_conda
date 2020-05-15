@@ -9,7 +9,9 @@
 - name: ensure Anaconda package repository is configured
   become: yes
   apt_repository:
-    repo: deb https://repo.anaconda.com/pkgs/misc/debrepo/conda stable main
+    repo: >
+      deb [arch=amd64 signed-by=/usr/share/keyrings/conda-archive-keyring.gpg]
+      https://repo.anaconda.com/pkgs/misc/debrepo/conda stable main
 
 - name: ensure miniconda is installed
   become: yes
